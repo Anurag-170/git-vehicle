@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AutoDrive – Vehicle Showroom</title>
+  <style>
+    :root {
+      --primary: #dc2626;
+      --dark: #111827;
+      --light: #f9fafb;
+      --gray: #6b7280;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background: var(--light);
+      color: #333;
+    }
+
+    header {
+      background: white;
+      padding: 20px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    header h1 {
+      color: var(--primary);
+    }
+
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: bold;
+    }
+
+    .hero {
+      background: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)),
+                  url('https://images.unsplash.com/photo-1549924231-f129b911e442');
+      background-size: cover;
+      background-position: center;
+      padding: 100px 60px;
+      text-align: center;
+      color: white;
+    }
+
+    .hero h2 {
+      font-size: 54px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      background: var(--primary);
+      color: white;
+      padding: 14px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #b91c1c;
+    }
+
+    section {
+      padding: 60px;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+      text-align: center;
+    }
+
+    .service {
+      background: white;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    }
+
+    .vehicles {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .vehicle {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+      overflow: hidden;
+    }
+
+    .vehicle img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .vehicle div {
+      padding: 20px;
+    }
+
+    .vehicle p {
+      color: var(--gray);
+      margin: 10px 0;
+    }
+
+    footer {
+      background: var(--dark);
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 900px) {
+      .hero h2 {
+        font-size: 40px;
+      }
+      header {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>AutoDrive</h1>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#vehicles">Vehicles</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h2>Drive Your Dream Car</h2>
+  <p>Best deals on new & used cars, bikes, and SUVs</p>
+  <button class="btn" onclick="scrollToVehicles()">Explore Vehicles</button>
+</section>
+
+<section id="services">
+  <h2 style="text-align:center; margin-bottom:40px">Our Services</h2>
+  <div class="services">
+    <div class="service">🚗 New Vehicles</div>
+    <div class="service">🔁 Used Cars</div>
+    <div class="service">💰 Easy Finance</div>
+    <div class="service">🛠 Service & Support</div>
+  </div>
+</section>
+
+<section id="vehicles">
+  <h2 style="text-align:center; margin-bottom:40px">Featured Vehicles</h2>
+  <div class="vehicles">
+    <div class="vehicle">
+      <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2" />
+      <div>
+        <h3>Sedan 2024</h3>
+        <p>Starting at $22,000</p>
+        <button class="btn">View Details</button>
+      </div>
+    </div>
+    <div class="vehicle">
+      <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70" />
+      <div>
+        <h3>SUV X-Series</h3>
+        <p>Starting at $35,000</p>
+        <button class="btn">View Details</button>
+      </div>
+    </div>
+    <div class="vehicle">
+      <img src="https://images.unsplash.com/photo-1493238792000-8113da705763" />
+      <div>
+        <h3>Sport Coupe</h3>
+        <p>Starting at $48,000</p>
+        <button class="btn">View Details</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 AutoDrive Vehicle Showroom. All rights reserved.</p>
+</footer>
+
+<script>
+  function scrollToVehicles() {
+    document.getElementById('vehicles').scrollIntoView({ behavior: 'smooth' });
+  }
+</script>
+
+</body>
+</html>
